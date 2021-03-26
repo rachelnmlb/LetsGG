@@ -1,0 +1,216 @@
+
+html , body {
+    background-color: black;
+    font-family: 'Della Respira', serif;
+
+}
+
+.topo {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+}
+
+.erro {
+    color: red;
+}
+
+.marca {
+    display: inline-flex;
+}
+
+.marca > a >img {
+    max-width: 90px;
+}
+
+.marca > h2 {
+    color: white;
+}
+
+#navbar-list {
+    display: inline-flex;
+    justify-content: flex-end;
+    padding-right:1em;
+}
+
+#navbar-list > li {
+    padding-left: 1em;
+    list-style: none;
+
+
+}
+
+#navbar-list > li > :link , :visited {
+    color: white;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+#navbar-list > li > :hover {
+    color: rgb(255, 196, 0);
+    transition: 0.5s ;
+}
+
+
+main {
+    display:flex;
+    flex-direction: column;
+}
+.fotosapp {
+    display: inline-flex;
+    justify-content: center;
+    border-bottom: solid rgb(197, 152, 5) 4px ;
+
+}
+
+.fotosapp > img {
+    height: auto;
+    width: 100%;
+    max-width: 410px;
+}
+
+.apresentacao {
+    display: flex;
+    justify-content: center;
+    border-bottom: solid rgb(197, 152, 5) 4px;
+    font-family: 'Josefin Sans';
+}
+
+.apresentacao > h3 {
+    padding: 5px 0 5px 0;
+    max-width: 60%;
+    text-align: justify;
+    line-height: 1.5em;
+    font-size: 1.2em;
+    color: whitesmoke;
+
+
+}
+
+.apresentacao > h3 > a {
+    display: flex;
+    justify-content: center;
+    color: rgb(221, 16, 16);
+    text-decoration: none;
+
+
+}
+
+
+.apresentacao > h3 >:hover {
+    color: rgb(255, 196, 0);
+    transition: 0.5s ;
+}
+
+
+.video {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer > a > img {
+
+    max-width: 200px;
+
+}
+
+.appstore {
+    padding-top: 12px;
+    max-width: 175px;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        background-color: rgb(20, 33, 220);
+    }
+
+    .fotosapp> img {
+        height: auto;
+        width: 100%;
+        max-width: 210px;
+    }
+}
+
+.pacotes{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+
+.pacotes > table {
+    color: whitesmoke;
+    border: solid rgba(230, 181, 20, .5) 2px;
+    border-collapse: collapse;
+    width: 50%;
+    height:auto;
+    background-color:black;
+}
+
+table td,th {
+    text-align: center;
+    padding: .5em;
+}
+
+table img {
+    width: 10%;
+}
+table > thead {
+    color:red;
+}
+.coluna1 {
+    width: 30%;
+}
+.coluna2{
+    width: 15%;
+}
+.coluna3{
+    width: 15%;
+}
+
+.propaganda {
+    color:rgba(230, 181, 20, .5);
+    text-align: center;
+}
+.preco {
+    color:red;
+    text-align: center;
+    margin-bottom: 5%;
+}
+#form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6%;
+    margin-top: 3%;
+}
+
+.formulario {
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.formulario > p {
+    color: whitesmoke;
+    margin-top: .5em;
+    margin-bottom: 0;
+}
+
+input[type="submit"],input[type="reset"] {
+    font-family: 'Della Respira';
+    font-size: 1em;
+    background-color: whitesmoke;
+    border: 0;
+}
+
+input[type="submit"]:hover,input[type="reset"]:hover {
+    background-color: rgb(255, 196, 0);
+}

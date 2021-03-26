@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Della+Respira&family=Josefin+Sans:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <title>Let's GG</title>
+</head>
+
+<body>
+    <header class="topo">
+        <div class="marca">
+            <a href="index.html"><img src="img/shakehands.png" alt="aperto de mão"></a>
+            <h2>Let's GG</h2>
+        </div>
+        <nav>
+            <ul id ="navbar-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pacotes.html">Pacotes</a></li>
+                <li><a href="falecom.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="form">
+        <form id="form-contato"class="formulario" action="" method="post" autocomplete="off" novalidate>
+            <p>
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" size="45"><br>
+                <span id="nome-erro" class="erro">&nbsp;</span>
+            </p>
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" size="45"><br>
+                <span id="email-erro" class="erro">&nbsp;</span>
+            </p>
+            <p>
+                <label for="assunto">Assunto:</label><br>
+                <input type="text" id="assunto" name="assunto" size="45"><br>
+                <span id="assunto-erro" class="erro">&nbsp;</span>
+            </p>
+            <p>
+                <label for="mensagem">Mensagem:</label><br>
+                <textarea id="mensagem" name="mensagem" rows="10" cols="60" wrap="virtual"></textarea><br>
+                <span id="mensagem-erro" class="erro">&nbsp;</span>
+            </p>
+            <p>
+                <input type="submit" value="Enviar Email"> <input type="reset" value="Limpar Formulário">
+            </p>
+        </form>
+    </div>
+
+    <footer>
+        <a href="https://play.google.com/store/?utm_source=latam_Med&utm_medium=hasem&utm_content=Jul1520&utm_campaign=Evergreen&pcampaignid=MKT-FDR-latam-br-1002290-Med-hasem-py-Evergreen-Jul1520-Text_Search_BKWS-41905086&gclid=Cj0KCQiAv6yCBhCLARIsABqJTjbUEKGk-Amvraa--v1kVcyeZ3VE9zTQ4ZWIki3CKWGdzmW14PiSl2UaAlhuEALw_wcB&gclsrc=aw.ds" target="_blank"><img alt="icone play store" src="img/playstore.png"></a>
+        <a href="https://www.apple.com/br/app-store/" target="_blank"><img  class="appstore" src="img/appstor.png"></a>
+    </footer>
+</body>
+</html>
+<script>
+
+    function validarForm(event) {
+        var nome = document.getElementById("nome")
+        var email = document.getElementById("email")
+        var assunto = document.getElementById("assunto")
+        var mensagem = document.getElementById("mensagem")
+
+        var nomeErro = document.getElementById("nome-erro")
+        var emailErro = document.getElementById("email-erro")
+        var assuntoErro = document.getElementById("assunto-erro")
+        var mensagemErro = document.getElementById("mensagem-erro")
+
+        var error = false
+
+        if (nome.value.length < 3) {
+            error = true
+            nomeErro.innerHTML = "O nome deve ter no mínimo 3 letras"
+        } else {
+            limparMensagem(nomeErro)
+        }
+
+        if (email.value.indexOf("@") == -1 || email.value.length < 3) {
+            error = true
+            emailErro.innerHTML = "Informe um email válido"
+        } else {
+            limparMensagem(emailErro)
+        }
+
+        if (assunto.value.length == 0) {
+            error = true
+            assuntoErro.innerHTML = "O assunto não pode ser vazio"
+        } else {
+            limparMensagem(assuntoErro)
+        }
+
+        if (mensagem.value.length == 0) {
+            error = true
+            mensagemErro.innerHTML = "A mensagem não pode ser vazia"
+        } else {
+            limparMensagem(mensagemErro)
+        }
+
+        if (error) {
+            event.preventDefault()
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var form = document.getElementById("form-contato");
+        form.addEventListener("submit", function(event) {
+            validarForm(event)
+        })
+
+        form.addEventListener("reset", function(event) {
+            form.querySelectorAll('span[id$="-erro"]').forEach(function(e) {
+                limparMensagem(e)
+            });
+        })
+    })
+
+    function limparMensagem(elemento) {
+        elemento.innerHTML = "&nbsp;"
+    }
+
+</script>
